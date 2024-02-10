@@ -199,6 +199,4 @@ const movieSchema = mongoose.Schema(
 )
 
 const movieModel = mongoose.model("movies", movieSchema);
-
-const allMovies = await movieModel.find({});
-console.log(allMovies)
+export{ movieModel };
