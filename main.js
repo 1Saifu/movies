@@ -22,6 +22,8 @@ while(runApp){
     }
     else if(input == 2){
         console.log("Add a new movie")
+        const showMovies = await movieModel.find({})
+        console.log(showMovies)
 
         const addMovie = {
             title: user("Enter a title: "),
@@ -37,6 +39,10 @@ while(runApp){
     }
     else if(input == 3){
         console.log("Update a movie")
+
+        const showMovies = await movieModel.find({})
+        console.log(showMovies)
+
         const orgTitle = user("Enter title of the movie you want to update: ");
         const newTitle = user("Enter a new title: ");
         const newRating = user("Enter ratings: ").split(",").map(Number);
@@ -46,6 +52,10 @@ while(runApp){
         )
     }
     else if(input == 4){
+
+        const showMovies = await movieModel.find({})
+        console.log(showMovies)
+
         const deleteMovie = user("Enter the title for a movie to delete a movie: ")
         await movieModel.deleteOne({ title: deleteMovie });
         console.log("Movies has been deleted")
